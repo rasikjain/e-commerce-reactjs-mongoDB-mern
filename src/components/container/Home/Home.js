@@ -43,7 +43,7 @@ class Home extends Component {
             {/* If hte products have data return products else return nothing using terinary statement */}
             {products.length
               ? products.map(product => (
-                  <ProductCard key={product.id} {...product} />
+                  <ProductCard key={product._id} {...product} />
                 ))
               : null}
           </div>
