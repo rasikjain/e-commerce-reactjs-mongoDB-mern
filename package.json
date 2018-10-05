@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.4"
@@ -11,19 +12,17 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "now-start": "node server/index.js",
+    "deploy": "now --public --dotenv=.env.prod -d"
   },
   "main": "server/",
-  "proxy": {
-    "/auth/callback": {
-      "target": "http://localhost:5050"
-    },
-    "/api": {
-      "target": "http://localhost:5050"
-    }
-  },
+  "proxy": "http://localhost:5050",
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "now": {
+    "alias": "rj-store"
   },
   "browserslist": [
     ">0.2%",
